@@ -1,4 +1,4 @@
-from typing import Set
+from typing import Set, List
 
 from pydantic import SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -11,7 +11,7 @@ class Settings(BaseSettings):
         case_sensitive=True,
     )
     BOT_API_TOKEN: SecretStr
-    ADMINS_TELEGRAM_ID: Set[int] = {}
+    ADMINS_TELEGRAM_ID: List[int] = {}
 
 
 settings = Settings()
